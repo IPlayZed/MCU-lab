@@ -17,6 +17,16 @@ enter_DefaultMode_from_RESET (void);
 // [Mode Transition Prototypes]$
 
 // $[Config(Per-Module Mode)Transition Prototypes]
+extern void
+WDT_0_enter_DefaultMode_from_RESET (void);
+extern void
+PORTS_1_enter_DefaultMode_from_RESET (void);
+extern void
+PBCFG_0_enter_DefaultMode_from_RESET (void);
+extern void
+ADC_0_enter_DefaultMode_from_RESET (void);
+extern void
+VREF_0_enter_DefaultMode_from_RESET (void);
 // [Config(Per-Module Mode)Transition Prototypes]$
 
 #endif
