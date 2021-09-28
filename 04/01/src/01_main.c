@@ -14,6 +14,12 @@
 // $[Generated Includes]
 // [Generated Includes]$
 
+#define ADC0_DATA_MAX 1024
+#define PERCENTAGE 100
+
+typedef unsigned short ushort;
+typedef unsigned char uchar;
+
 //-----------------------------------------------------------------------------
 // SiLabs_Startup() Routine
 // ----------------------------------------------------------------------------
@@ -28,11 +34,28 @@ void SiLabs_Startup (void)
   // [SiLabs Startup]$
 }
 
+
+ushort measureADC0()
+{
+  ADC0CN0_ADINT = 0;
+  ADC0CN0_ADBUSY = 1;
+  while(!ADC0CN0_ADINT);
+  return ADC0;
+}
+
+float getADC0DataInPercentage(ushort ADC0Data)
+{
+  return (float)(ADC0Data/ADC0_DATA_MAX)*PERCENTAGE;
+}
+
 //-----------------------------------------------------------------------------
 // main() Routine
 // ----------------------------------------------------------------------------
 int main (void)
 {
+  ushort ADC0Data = 0;
+  float ADC0DataPercentage = 0.0;
+
   // Call hardware initialization routine
   enter_DefaultMode_from_RESET();
   
@@ -40,5 +63,7 @@ int main (void)
   {
     // $[Generated Run-time code]
     // [Generated Run-time code]$
+    ADC0Data = measureADC0();
+    ADC0DataPercentage = getADC0DataInPercentage(ADC0Data);
   }                             
 }
