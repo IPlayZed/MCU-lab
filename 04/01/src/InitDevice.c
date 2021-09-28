@@ -26,6 +26,8 @@ enter_DefaultMode_from_RESET (void)
   WDT_0_enter_DefaultMode_from_RESET ();
   PORTS_1_enter_DefaultMode_from_RESET ();
   PBCFG_0_enter_DefaultMode_from_RESET ();
+  ADC_0_enter_DefaultMode_from_RESET ();
+  VREF_0_enter_DefaultMode_from_RESET ();
   // [Config Calls]$
 
 }
@@ -119,6 +121,76 @@ PORTS_1_enter_DefaultMode_from_RESET (void)
 
   // $[P1MAT - Port 1 Match]
   // [P1MAT - Port 1 Match]$
+
+}
+
+extern void
+ADC_0_enter_DefaultMode_from_RESET (void)
+{
+  // $[ADC0CN1 - ADC0 Control 1]
+  // [ADC0CN1 - ADC0 Control 1]$
+
+  // $[ADC0MX - ADC0 Multiplexer Selection]
+  /***********************************************************************
+   - Select ADC0.15
+   ***********************************************************************/
+  ADC0MX = ADC0MX_ADC0MX__ADC0P15;
+  // [ADC0MX - ADC0 Multiplexer Selection]$
+
+  // $[ADC0CF - ADC0 Configuration]
+  /***********************************************************************
+   - SAR Clock Divider = 0x00
+   - ADC0 operates in 10-bit or 12-bit mode 
+   - The on-chip PGA gain is 1
+   - Normal Track Mode
+   ***********************************************************************/
+  ADC0CF = (0x00 << ADC0CF_ADSC__SHIFT) | ADC0CF_AD8BE__NORMAL
+      | ADC0CF_ADGN__GAIN_1 | ADC0CF_ADTM__TRACK_NORMAL;
+  // [ADC0CF - ADC0 Configuration]$
+
+  // $[ADC0AC - ADC0 Accumulator Configuration]
+  // [ADC0AC - ADC0 Accumulator Configuration]$
+
+  // $[ADC0TK - ADC0 Burst Mode Track Time]
+  // [ADC0TK - ADC0 Burst Mode Track Time]$
+
+  // $[ADC0PWR - ADC0 Power Control]
+  // [ADC0PWR - ADC0 Power Control]$
+
+  // $[ADC0GTH - ADC0 Greater-Than High Byte]
+  // [ADC0GTH - ADC0 Greater-Than High Byte]$
+
+  // $[ADC0GTL - ADC0 Greater-Than Low Byte]
+  // [ADC0GTL - ADC0 Greater-Than Low Byte]$
+
+  // $[ADC0LTH - ADC0 Less-Than High Byte]
+  // [ADC0LTH - ADC0 Less-Than High Byte]$
+
+  // $[ADC0LTL - ADC0 Less-Than Low Byte]
+  // [ADC0LTL - ADC0 Less-Than Low Byte]$
+
+  // $[ADC0CN0 - ADC0 Control 0]
+  /***********************************************************************
+   - Enable ADC0 
+   ***********************************************************************/
+  ADC0CN0 |= ADC0CN0_ADEN__ENABLED;
+  // [ADC0CN0 - ADC0 Control 0]$
+
+}
+
+extern void
+VREF_0_enter_DefaultMode_from_RESET (void)
+{
+  // $[REF0CN - Voltage Reference Control]
+  /***********************************************************************
+   - Disable the Temperature Sensor
+   - The ADC0 ground reference is the GND pin
+   - The internal reference operates at 1.65 V nominal
+   - The ADC0 voltage reference is the VDD pin
+   ***********************************************************************/
+  REF0CN = REF0CN_TEMPE__TEMP_DISABLED | REF0CN_GNDSL__GND_PIN
+      | REF0CN_IREFLVL__1P65 | REF0CN_REFSL__VDD_PIN;
+  // [REF0CN - Voltage Reference Control]$
 
 }
 
