@@ -45,7 +45,7 @@ ushort measureADC0()
 
 float getADC0DataInPercentage(ushort ADC0Data)
 {
-  return (float)(ADC0Data/ADC0_DATA_MAX)*PERCENTAGE;
+  return ((float)ADC0Data/ADC0_DATA_MAX)*PERCENTAGE;
 }
 
 //-----------------------------------------------------------------------------
