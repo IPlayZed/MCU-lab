@@ -23,7 +23,65 @@ extern void
 enter_DefaultMode_from_RESET (void)
 {
   // $[Config Calls]
+  WDT_0_enter_DefaultMode_from_RESET ();
+  PBCFG_0_enter_DefaultMode_from_RESET ();
   // [Config Calls]$
+
+}
+
+extern void
+WDT_0_enter_DefaultMode_from_RESET (void)
+{
+  // $[Watchdog Timer Init Variable Declarations]
+  uint32_t i;
+  bool ea;
+  // [Watchdog Timer Init Variable Declarations]$
+
+  // $[WDTCN - Watchdog Timer Control]
+  // Deprecated
+  // [WDTCN - Watchdog Timer Control]$
+
+  // $[WDTCN_2 - Watchdog Timer Control]
+
+  // Feed WDT timer before disabling (Erratum WDT_E102)
+  WDTCN = 0xA5;
+
+  // Add 2 LFO cycle delay before disabling WDT (Erratum WDT_E102)
+  for (i = 0; i < (2 * 3062500UL) / (10000 * 3); i++)
+    {
+      NOP ();
+    }
+
+  // Disable WDT
+  ea = IE_EA;
+  IE_EA = 0;
+  WDTCN = 0xDE;
+  WDTCN = 0xAD;
+  IE_EA = ea;
+
+  // [WDTCN_2 - Watchdog Timer Control]$
+
+}
+
+extern void
+PBCFG_0_enter_DefaultMode_from_RESET (void)
+{
+  // $[XBR2 - Port I/O Crossbar 2]
+  /***********************************************************************
+   - Weak Pullups enabled 
+   - Crossbar enabled
+   ***********************************************************************/
+  XBR2 = XBR2_WEAKPUD__PULL_UPS_ENABLED | XBR2_XBARE__ENABLED;
+  // [XBR2 - Port I/O Crossbar 2]$
+
+  // $[PRTDRV - Port Drive Strength]
+  // [PRTDRV - Port Drive Strength]$
+
+  // $[XBR0 - Port I/O Crossbar 0]
+  // [XBR0 - Port I/O Crossbar 0]$
+
+  // $[XBR1 - Port I/O Crossbar 1]
+  // [XBR1 - Port I/O Crossbar 1]$
 
 }
 
