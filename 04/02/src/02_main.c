@@ -64,6 +64,6 @@ int main (void)
     // $[Generated Run-time code]
     // [Generated Run-time code]$
     ADC0Data = measureADC0();
-    ADC0Data_mV= getADC0DataInPercentage(ADC0Data);
+    ADC0Data_mV= getADC0DataIn_mV(ADC0Data);
   }                             
 }
