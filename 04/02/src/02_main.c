@@ -15,7 +15,7 @@
 // [Generated Includes]$
 
 #define ADC0_DATA_MAX 1024
-#define MV_SCALE 0.001
+#define MV_SCALE 1000
 
 typedef unsigned short ushort;
 typedef unsigned char uchar;
