@@ -95,25 +95,38 @@ PORTS_1_enter_DefaultMode_from_RESET (void)
   // [P1 - Port 1 Pin Latch]$
 
   // $[P1MDOUT - Port 1 Output Mode]
-  /***********************************************************************
-   - P1.0 output is open-drain
-   - P1.1 output is open-drain
-   - P1.2 output is open-drain
-   - P1.3 output is open-drain
-   - P1.4 output is open-drain
-   - P1.5 output is open-drain
-   - P1.6 output is open-drain
-   - P1.7 output is push-pull
-   ***********************************************************************/
-  P1MDOUT = P1MDOUT_B0__OPEN_DRAIN | P1MDOUT_B1__OPEN_DRAIN
-      | P1MDOUT_B2__OPEN_DRAIN | P1MDOUT_B3__OPEN_DRAIN | P1MDOUT_B4__OPEN_DRAIN
-      | P1MDOUT_B5__OPEN_DRAIN | P1MDOUT_B6__OPEN_DRAIN | P1MDOUT_B7__PUSH_PULL;
   // [P1MDOUT - Port 1 Output Mode]$
 
   // $[P1MDIN - Port 1 Input Mode]
+  /***********************************************************************
+   - P1.0 pin is configured for digital mode
+   - P1.1 pin is configured for digital mode
+   - P1.2 pin is configured for digital mode
+   - P1.3 pin is configured for digital mode
+   - P1.4 pin is configured for digital mode
+   - P1.5 pin is configured for digital mode
+   - P1.6 pin is configured for digital mode
+   - P1.7 pin is configured for analog mode
+   ***********************************************************************/
+  P1MDIN = P1MDIN_B0__DIGITAL | P1MDIN_B1__DIGITAL | P1MDIN_B2__DIGITAL
+      | P1MDIN_B3__DIGITAL | P1MDIN_B4__DIGITAL | P1MDIN_B5__DIGITAL
+      | P1MDIN_B6__DIGITAL | P1MDIN_B7__ANALOG;
   // [P1MDIN - Port 1 Input Mode]$
 
   // $[P1SKIP - Port 1 Skip]
+  /***********************************************************************
+   - P1.0 pin is not skipped by the crossbar
+   - P1.1 pin is not skipped by the crossbar
+   - P1.2 pin is not skipped by the crossbar
+   - P1.3 pin is not skipped by the crossbar
+   - P1.4 pin is not skipped by the crossbar
+   - P1.5 pin is not skipped by the crossbar
+   - P1.6 pin is not skipped by the crossbar
+   - P1.7 pin is skipped by the crossbar
+   ***********************************************************************/
+  P1SKIP = P1SKIP_B0__NOT_SKIPPED | P1SKIP_B1__NOT_SKIPPED
+      | P1SKIP_B2__NOT_SKIPPED | P1SKIP_B3__NOT_SKIPPED | P1SKIP_B4__NOT_SKIPPED
+      | P1SKIP_B5__NOT_SKIPPED | P1SKIP_B6__NOT_SKIPPED | P1SKIP_B7__SKIPPED;
   // [P1SKIP - Port 1 Skip]$
 
   // $[P1MASK - Port 1 Mask]

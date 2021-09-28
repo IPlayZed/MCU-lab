@@ -7,8 +7,9 @@
     <property object="ADC_0" propertyId="adc.control.enableadc" value="Enabled"/>
     <property object="ADC_0" propertyId="adc.multiplexerselection.positiveinputselection" value="ADC0.15 (P1.7)"/>
     <property object="DefaultMode" propertyId="mode.diagramLocation" value="100, 100"/>
-    <property object="P1.7" propertyId="ports.settings.iomode" value="Digital Push-Pull Output"/>
-    <property object="P1.7" propertyId="ports.settings.outputmode" value="Push-pull"/>
+    <property object="P1.7" propertyId="ports.settings.inputmode" value="Analog"/>
+    <property object="P1.7" propertyId="ports.settings.iomode" value="Analog I/O"/>
+    <property object="P1.7" propertyId="ports.settings.skip" value="Skipped"/>
     <property object="PBCFG_0" propertyId="pbcfg.settings.enablecrossbar" value="Enabled"/>
     <property object="VREF_0" propertyId="ABPeripheral.included" value="true"/>
     <property object="VREF_0" propertyId="vref.hidden.voltagereferenceselect" value="VDD pin"/>
