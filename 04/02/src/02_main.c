@@ -16,6 +16,7 @@
 
 #define ADC0_DATA_MAX 1024
 #define MV_SCALE 1000
+#define VDD 3.3
 
 typedef unsigned short ushort;
 typedef unsigned char uchar;
@@ -45,7 +46,7 @@ ushort measureADC0()
 
 float getADC0DataIn_mV(ushort ADC0Data)
 {
-  return ((float)ADC0Data/ADC0_DATA_MAX)*MV_SCALE;
+  return (((float)ADC0Data*VDD)/ADC0_DATA_MAX)*MV_SCALE;
 }
 
 //-----------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   02_MAIN                                                           09/28/2021 15:11:26 PAGE 1   
+C51 COMPILER V9.60.0.0   02_MAIN                                                           09/28/2021 15:21:37 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE 02_MAIN
@@ -28,64 +28,65 @@ line level    source
   15          // [Generated Includes]$
   16          
   17          #define ADC0_DATA_MAX 1024
-  18          #define MV_SCALE 0.001
-  19          
-  20          typedef unsigned short ushort;
-  21          typedef unsigned char uchar;
-  22          
-  23          //-----------------------------------------------------------------------------
-  24          // SiLabs_Startup() Routine
-  25          // ----------------------------------------------------------------------------
-  26          // This function is called immediately after reset, before the initialization
-  27          // code is run in SILABS_STARTUP.A51 (which runs before main() ). This is a
-  28          // useful place to disable the watchdog timer, which is enable by default
-  29          // and may trigger before main() in some instances.
-  30          //-----------------------------------------------------------------------------
-  31          void SiLabs_Startup (void)
-  32          {
-  33   1        // $[SiLabs Startup]
-  34   1        // [SiLabs Startup]$
-  35   1      }
-  36          
+  18          #define MV_SCALE 1000
+  19          #define VDD 3.3
+  20          
+  21          typedef unsigned short ushort;
+  22          typedef unsigned char uchar;
+  23          
+  24          //-----------------------------------------------------------------------------
+  25          // SiLabs_Startup() Routine
+  26          // ----------------------------------------------------------------------------
+  27          // This function is called immediately after reset, before the initialization
+  28          // code is run in SILABS_STARTUP.A51 (which runs before main() ). This is a
+  29          // useful place to disable the watchdog timer, which is enable by default
+  30          // and may trigger before main() in some instances.
+  31          //-----------------------------------------------------------------------------
+  32          void SiLabs_Startup (void)
+  33          {
+  34   1        // $[SiLabs Startup]
+  35   1        // [SiLabs Startup]$
+  36   1      }
   37          
-  38          ushort measureADC0()
-  39          {
-  40   1        ADC0CN0_ADINT = 0;
-  41   1        ADC0CN0_ADBUSY = 1;
-  42   1        while(!ADC0CN0_ADINT);
-  43   1        return ADC0;
-  44   1      }
-  45          
-  46          float getADC0DataIn_mV(ushort ADC0Data)
-  47          {
-  48   1        return ((float)ADC0Data/ADC0_DATA_MAX)*MV_SCALE;
-  49   1      }
-  50          
-  51          //-----------------------------------------------------------------------------
-  52          // main() Routine
-C51 COMPILER V9.60.0.0   02_MAIN                                                           09/28/2021 15:11:26 PAGE 2   
+  38          
+  39          ushort measureADC0()
+  40          {
+  41   1        ADC0CN0_ADINT = 0;
+  42   1        ADC0CN0_ADBUSY = 1;
+  43   1        while(!ADC0CN0_ADINT);
+  44   1        return ADC0;
+  45   1      }
+  46          
+  47          float getADC0DataIn_mV(ushort ADC0Data)
+  48          {
+  49   1        return (((float)ADC0Data*VDD)/ADC0_DATA_MAX)*MV_SCALE;
+  50   1      }
+  51          
+  52          //-----------------------------------------------------------------------------
+C51 COMPILER V9.60.0.0   02_MAIN                                                           09/28/2021 15:21:37 PAGE 2   
 
-  53          // ----------------------------------------------------------------------------
-  54          int main (void)
-  55          {
-  56   1        ushort ADC0Data = 0;
-  57   1        float ADC0Data_mV = 0.0;
-  58   1      
-  59   1        // Call hardware initialization routine
-  60   1        enter_DefaultMode_from_RESET();
-  61   1        
-  62   1        while (1) 
-  63   1        {
-  64   2          // $[Generated Run-time code]
-  65   2          // [Generated Run-time code]$
-  66   2          ADC0Data = measureADC0();
-  67   2          ADC0Data_mV= getADC0DataIn_mV(ADC0Data);
-  68   2        }                             
-  69   1      }
+  53          // main() Routine
+  54          // ----------------------------------------------------------------------------
+  55          int main (void)
+  56          {
+  57   1        ushort ADC0Data = 0;
+  58   1        float ADC0Data_mV = 0.0;
+  59   1      
+  60   1        // Call hardware initialization routine
+  61   1        enter_DefaultMode_from_RESET();
+  62   1        
+  63   1        while (1) 
+  64   1        {
+  65   2          // $[Generated Run-time code]
+  66   2          // [Generated Run-time code]$
+  67   2          ADC0Data = measureADC0();
+  68   2          ADC0Data_mV= getADC0DataIn_mV(ADC0Data);
+  69   2        }                             
+  70   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     78    ----
+   CODE SIZE        =     88    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
