@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ASCII"?>
+<device:XMLDevice xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:device="http://www.silabs.com/ss/hwconfig/document/device.ecore" name="C8051F850-C-GU-QSOP" partId="mcu.8051.c8051.f850.c8051f850-c-gu" version="4.0.1" contextId="%DEFAULT%">
+  <mode name="DefaultMode">
+    <property object="DefaultMode" propertyId="mode.diagramLocation" value="100, 100"/>
+    <property object="INTERRUPT_0" propertyId="ABPeripheral.included" value="true"/>
+    <property object="INTERRUPT_0" propertyId="interrupt.interruptenable.enableallinterrupts" value="Enabled"/>
+    <property object="INTERRUPT_0" propertyId="interrupt.interruptenable.enabletimer2interrupt" value="Enabled"/>
+    <property object="P1.0" propertyId="ports.settings.iomode" value="Digital Push-Pull Output"/>
+    <property object="P1.0" propertyId="ports.settings.outputmode" value="Push-pull"/>
+    <property object="P1.7" propertyId="ports.settings.iomode" value="Digital Push-Pull Output"/>
+    <property object="P1.7" propertyId="ports.settings.outputmode" value="Push-pull"/>
+    <property object="PBCFG_0" propertyId="pbcfg.settings.enablecrossbar" value="Enabled"/>
+    <property object="TIMER16_2" propertyId="ABPeripheral.included" value="true"/>
+    <property object="TIMER16_2" propertyId="timer16.control.clocksource" value="SYSCLK"/>
+    <property object="TIMER16_2" propertyId="timer16.control.clocksourcefrequency" value="3.062 MHz"/>
+    <property object="TIMER16_2" propertyId="timer16.control.clocksourcefrequencyvalue" value="3062500"/>
+    <property object="TIMER16_2" propertyId="timer16.control.clocksourceperiod" value="326.531 ns"/>
+    <property object="TIMER16_2" propertyId="timer16.control.runcontrol" value="Start"/>
+    <property object="TIMER16_2" propertyId="timer16.control.timerrunningstate" value="Timer is Running"/>
+    <property object="TIMER16_2" propertyId="timer16.initandreloadvalue.targetoverflowfrequency" value="100"/>
+    <property object="TIMER16_2" propertyId="timer16.initandreloadvalue.timerinitoverflowafter" value="21.400 ms"/>
+    <property object="TIMER16_2" propertyId="timer16.initandreloadvalue.timerreloadoverflowfrequency" value="100.000 Hz"/>
+    <property object="TIMER16_2" propertyId="timer16.initandreloadvalue.timerreloadoverflowfrequencylowbyte" value="19.022 kHz"/>
+    <property object="TIMER16_2" propertyId="timer16.initandreloadvalue.timerreloadoverflowperiod" value="10.000 ms"/>
+    <property object="TIMER16_2" propertyId="timer16.initandreloadvalue.timerreloadoverflowperiodlowbyte" value="52.571 us"/>
+    <property object="TIMER16_2" propertyId="timer16.initandreloadvalue.timerreloadvalue" value="34911"/>
+    <property object="TIMER16_2" propertyId="timer16.reloadhighbyte.reloadhighbyte" value="136"/>
+    <property object="TIMER16_2" propertyId="timer16.reloadlowbyte.reloadlowbyte" value="95"/>
+    <property object="TIMER16_2" propertyId="timer16.timeroverflowforperipherialsclocksource.adc0conversionstartsignal" value="100.000 Hz"/>
+    <property object="TIMER16_2" propertyId="timer16.timeroverflowforperipherialsclocksource.smbus0sckfrequency" value="33.333 Hz"/>
+    <property object="TIMER16_2" propertyId="timer16.timeroverflowforperipherialsclocksource.smbus0scllowtimeout" value="10.000 ms"/>
+    <property object="TIMER_SETUP_0" propertyId="ABPeripheral.included" value="true"/>
+    <property object="TIMER_SETUP_0" propertyId="timer_setup.clockcontrol.timer2lowbyteclockselect" value="Use SYSCLK"/>
+    <property object="TIMER_SETUP_0" propertyId="timer_setup.timer0.clockfrequency" value="255.208 kHz"/>
+    <property object="TIMER_SETUP_0" propertyId="timer_setup.timer1.clockfrequency" value="255.208 kHz"/>
+    <property object="WDT_0" propertyId="ABPeripheral.included" value="true"/>
+    <property object="WDT_0" propertyId="wdt.watchdogcontrol.wdtenable" value="Disable"/>
+  </mode>
+  <modeTransition>
+    <property object="RESET &#x2192; DefaultMode" propertyId="modeTransition.source" value="RESET"/>
+    <property object="RESET &#x2192; DefaultMode" propertyId="modeTransition.target" value="DefaultMode"/>
+  </modeTransition>
+</device:XMLDevice>
