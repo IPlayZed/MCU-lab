@@ -8,6 +8,7 @@
 
 // USER INCLUDES
 #include <SI_EFM8BB1_Register_Enums.h>
+extern uint16_t ADC0_data;
 
 //-----------------------------------------------------------------------------
 // ADC0EOC_ISR
@@ -20,5 +21,6 @@
 SI_INTERRUPT (ADC0EOC_ISR, ADC0EOC_IRQn)
   {
     ADC0CN0_ADINT = 0;
+    ADC0_data = ADC0;
   }
 

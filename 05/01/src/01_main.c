@@ -14,6 +14,19 @@
 // $[Generated Includes]
 // [Generated Includes]$
 
+#define ENABLE 0
+#define DISABLE 1
+#define VDD 3.3
+#define R_REF 10000
+#define ADC_DATA_MAX 4096
+#define SCALE VDD/ADC_DATA_MAX
+
+volatile uint16_t ADC0_data;
+uint16_t ADC0_data_temp = 0;
+float R_measure = 0;
+float Volts_temp = 0;
+
+
 //-----------------------------------------------------------------------------
 // SiLabs_Startup() Routine
 // ----------------------------------------------------------------------------
@@ -31,6 +44,16 @@ void SiLabs_Startup (void)
 //-----------------------------------------------------------------------------
 // main() Routine
 // ----------------------------------------------------------------------------
+float calculate_R(float V_out)
+{
+  return (V_out*R_REF)/(VDD-V_out);
+}
+
+float to_Volts(uint16_t ADC_data)
+{
+  return ADC_data*SCALE;
+}
+
 int main (void)
 {
   // Call hardware initialization routine
@@ -40,5 +63,13 @@ int main (void)
   {
     // $[Generated Run-time code]
     // [Generated Run-time code]$
+
+      IE_EA = ENABLE;
+      ADC0_data_temp = ADC0_data;
+      IE_EA = DISABLE;
+
+      Volts_temp = to_Volts(ADC0_data_temp);
+
+      R_measure = calculate_R(Volts_temp);
   }                             
 }
