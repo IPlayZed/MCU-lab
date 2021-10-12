@@ -17,6 +17,8 @@
 #define OFF 1
 #define ON 0
 
+volatile int counter=0;
+
 // DECODER defines
 #define DECODER_A P1_B1
 #define DECODER_B P1_B2
@@ -61,11 +63,23 @@ void displayData (uint8_t inputData)
   DISP_OUT_ENABLE = 0;
 }
 
+void lamp()
+{
+displayData(2U);
+  while(counter<10);
+  counter = 0;
+  displayData(4U);
+  while(counter<5);
+  counter = 0;
+  displayData(8U);
+  while(counter<10);
+  counter = 0;
+}
 //-----------------------------------------------------------------------------
 // main() Routine
 // ----------------------------------------------------------------------------
-int main (void)
-{
+int main (void){
+
   // Call hardware initialization routine
   enter_DefaultMode_from_RESET();
   // T5 LED select from decoder
@@ -73,13 +87,13 @@ int main (void)
   DECODER_B = ON;
   DECODER_C = OFF;
 
-  displayData(1U);
+
 
   while (1) 
   {
     // $[Generated Run-time code]
     // [Generated Run-time code]$
-
+      lamp();
 
   }
 }
