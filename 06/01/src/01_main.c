@@ -14,6 +14,19 @@
 // $[Generated Includes]
 // [Generated Includes]$
 
+#define OFF 1
+#define ON 0
+
+// DECODER defines
+#define DECODER_A P1_B1
+#define DECODER_B P1_B2
+#define DECODER_C P0_B4
+
+// SHIFT REGISTER defines
+#define DISP_CLOCK P0_B0
+#define DISP_DATA P0_B2
+#define DISP_OUT_ENABLE P0_B3
+
 //-----------------------------------------------------------------------------
 // SiLabs_Startup() Routine
 // ----------------------------------------------------------------------------
@@ -40,5 +53,11 @@ int main (void)
   {
     // $[Generated Run-time code]
     // [Generated Run-time code]$
+
+    // T5 LED select from decoder
+    DECODER_A = ON;
+    DECODER_B = ON;
+    DECODER_C = OFF;
+
   }                             
 }
