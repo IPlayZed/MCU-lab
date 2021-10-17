@@ -1,0 +1,66 @@
+Partlist
+
+Exported from 4x7-segments Arduino shield.sch at 2021. 06. 21. 6:30
+
+EAGLE Version 9.6.2 Copyright (c) 1988-2020 Autodesk, Inc.
+
+Assembly variant: 
+
+Part     Value          Device          Package      Library        Sheet
+
+AD       6x1F-H8.5      PINHD-1X6       1X06         SmartPrj       1
+C1       100n           C0805           C0805        Zoli           2
+C2       100n           C0805           C0805        Zoli           2
+C3       1n             C0805           C0805        Zoli           3
+C4       100n           C0805           C0805        Zoli2          3
+C11      10n            C0805           C0805        NoiseRLC       3
+C32      1n             C0805           C0805        Zoli           3
+IC2      OPA_DUALSO08   OPA_DUALSO08    SO08         NoiseIC        3
+IN1      MOLEX3V        MOLEX3V         MOLEXV3      NoiseEM        3
+IOH      10x1F-H8.5     PINHD-1X10_ARD  1X10         SmartPrj       1
+IOL      8x1F-H8.5      PINHD-1X8       1X08         SmartPrj       1
+IOL1     8x1F-H8.5      PINHD-1X8       1X08         SmartPrj       1
+L1                      L0805           R0805        Zoli2          3
+L2                      L0805           R0805        Zoli2          3
+L3                      L0805           R0805        Zoli2          3
+LED1                    LEDCHIPLED_1206 CHIPLED_1206 led            2
+LED2                    LEDCHIPLED_1206 CHIPLED_1206 led            2
+LED3                    LEDCHIPLED_1206 CHIPLED_1206 led            2
+LED4                    LEDCHIPLED_1206 CHIPLED_1206 led            2
+LED5                    LEDCHIPLED_1206 CHIPLED_1206 led            2
+LED6                    LEDCHIPLED_1206 CHIPLED_1206 led            2
+LED7                    LEDCHIPLED_1206 CHIPLED_1206 led            2
+POWER    8x1F-H8.5      PINHD-1X8       1X08         SmartPrj       1
+POWER1   8x1F-H8.5      PINHD-1X8       1X08         SmartPrj       1
+Q1       BC807-25SMD    BC807-25SMD     SOT23-BEC    transistor-pnp 2
+Q2       BC807-25SMD    BC807-25SMD     SOT23-BEC    transistor-pnp 2
+Q3       BC807-25SMD    BC807-25SMD     SOT23-BEC    transistor-pnp 2
+Q4       BC807-25SMD    BC807-25SMD     SOT23-BEC    transistor-pnp 2
+Q5       BC807-25SMD    BC807-25SMD     SOT23-BEC    transistor-pnp 2
+R1       10k            R0805           R0805        Zoli2          1
+R2       100R           R0805           R0805        NoiseRLC       1
+R3       100R           R0805           R0805        NoiseRLC       1
+R4       3k9            R1206           R1206        NoiseRLC       2
+R5       4k7            R0805           R0805        NoiseRLC       3
+R7       10k            R0805           R0805        Zoli2          1
+R7G      10M            R0805           R0805        NoiseRLC       3
+R8       1k             R1206           R1206        NoiseRLC       2
+R9       1k             R1206           R1206        NoiseRLC       2
+R10      1k             R1206           R1206        NoiseRLC       2
+R11      1k             R1206           R1206        NoiseRLC       2
+R12      1k             R1206           R1206        NoiseRLC       2
+R13      1k             R1206           R1206        NoiseRLC       2
+R14      1k             R1206           R1206        NoiseRLC       2
+R15      1k             R1206           R1206        NoiseRLC       2
+R16      4k7            R0805           R0805        NoiseRLC       3
+R17      10k            R1206           R1206        Zoli2          3
+R18      10k            R1206           R1206        Zoli2          3
+R19      4k7            R0805           R0805        NoiseRLC       2
+R20      4k7            R0805           R0805        NoiseRLC       2
+R21      4k7            R0805           R0805        NoiseRLC       2
+R22      4k7            R0805           R0805        NoiseRLC       2
+R23      4k7            R0805           R0805        NoiseRLC       2
+U$2      MOLEX6         MOLEX6          MOLEXV6      NoiseEM        1
+X2       MOLEX4V        MOLEX4V         MOLEXV4      NoiseEM        1
+X3                      JP2E            JP2          EAT            1
+X4       MOLEX4V        MOLEX4V         MOLEXV4      NoiseEM        1
