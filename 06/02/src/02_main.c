@@ -53,7 +53,6 @@ void displayData (uint8_t inputData)
   DISP_OUT_ENABLE = 1 ;
   for(bitSelector = 0; bitSelector < 8; bitSelector++)
     {
-      shift = 1 << bitSelector;
       DISP_DATA = (inputData >> (7-bitSelector)) & 1U;
       DISP_CLOCK = OFF;
       DISP_CLOCK = ON;

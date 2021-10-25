@@ -27,8 +27,9 @@ enter_DefaultMode_from_RESET (void)
   PORTS_0_enter_DefaultMode_from_RESET ();
   PORTS_1_enter_DefaultMode_from_RESET ();
   PBCFG_0_enter_DefaultMode_from_RESET ();
+  TIMER01_0_enter_DefaultMode_from_RESET ();
   TIMER16_2_enter_DefaultMode_from_RESET ();
-  INTERRUPT_0_enter_DefaultMode_from_RESET ();
+  TIMER_SETUP_0_enter_DefaultMode_from_RESET ();
   // [Config Calls]$
 
 }
@@ -238,6 +239,70 @@ INTERRUPT_0_enter_DefaultMode_from_RESET (void)
 
   // $[IP - Interrupt Priority]
   // [IP - Interrupt Priority]$
+
+}
+
+extern void
+TIMER_SETUP_0_enter_DefaultMode_from_RESET (void)
+{
+  // $[CKCON0 - Clock Control 0]
+  // [CKCON0 - Clock Control 0]$
+
+  // $[TMOD - Timer 0/1 Mode]
+  /***********************************************************************
+   - Mode 2, 8-bit Counter/Timer with Auto-Reload
+   - Mode 0, 13-bit Counter/Timer
+   - Timer Mode
+   - Timer 0 enabled when TR0 = 1 irrespective of INT0 logic level
+   - Timer Mode
+   - Timer 1 enabled when TR1 = 1 irrespective of INT1 logic level
+   ***********************************************************************/
+  TMOD = TMOD_T0M__MODE2 | TMOD_T1M__MODE0 | TMOD_CT0__TIMER
+      | TMOD_GATE0__DISABLED | TMOD_CT1__TIMER | TMOD_GATE1__DISABLED;
+  // [TMOD - Timer 0/1 Mode]$
+
+  // $[TCON - Timer 0/1 Control]
+  /***********************************************************************
+   - Start Timer 0 running
+   ***********************************************************************/
+  TCON |= TCON_TR0__RUN;
+  // [TCON - Timer 0/1 Control]$
+
+}
+
+extern void
+TIMER01_0_enter_DefaultMode_from_RESET (void)
+{
+  // $[Timer Initialization]
+  //Save Timer Configuration
+  uint8_t TCON_save;
+  TCON_save = TCON;
+  //Stop Timers
+  TCON &= ~TCON_TR0__BMASK & ~TCON_TR1__BMASK;
+
+  // [Timer Initialization]$
+
+  // $[TH0 - Timer 0 High Byte]
+  /***********************************************************************
+   - Timer 0 High Byte = 0x01
+   ***********************************************************************/
+  TH0 = (0x01 << TH0_TH0__SHIFT);
+  // [TH0 - Timer 0 High Byte]$
+
+  // $[TL0 - Timer 0 Low Byte]
+  // [TL0 - Timer 0 Low Byte]$
+
+  // $[TH1 - Timer 1 High Byte]
+  // [TH1 - Timer 1 High Byte]$
+
+  // $[TL1 - Timer 1 Low Byte]
+  // [TL1 - Timer 1 Low Byte]$
+
+  // $[Timer Restoration]
+  //Restore Timer Configuration
+  TCON |= (TCON_save & TCON_TR0__BMASK) | (TCON_save & TCON_TR1__BMASK);
+
+  // [Timer Restoration]$
 
 }
 
