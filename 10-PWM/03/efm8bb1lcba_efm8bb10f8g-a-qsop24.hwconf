@@ -6,6 +6,7 @@
     <property object="ADC_0" propertyId="adc.configuration.enable8bitmode" value="8-Bit mode"/>
     <property object="ADC_0" propertyId="adc.configuration.gaincontrol" value="1x gain"/>
     <property object="ADC_0" propertyId="adc.configuration.resolution" value="8-bit"/>
+    <property object="ADC_0" propertyId="adc.control.enableadc" value="Enabled"/>
     <property object="ADC_0" propertyId="adc.control.startofconversion" value="Timer 2 overflow"/>
     <property object="ADC_0" propertyId="adc.multiplexerselection.positiveinputselection" value="ADC0.15 (P1.7)"/>
     <property object="CROSSBAR0" propertyId="xbar0.pca0.cex" value="CEX0"/>

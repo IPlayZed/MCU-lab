@@ -1,14 +1,13 @@
-C51 COMPILER V9.60.0.0   INITDEVICE                                                        11/16/2021 15:35:54 PAGE 1   
+C51 COMPILER V9.60.0.0   INITDEVICE                                                        11/23/2021 14:40:10 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE INITDEVICE
-OBJECT MODULE PLACED IN .\src\InitDevice.OBJ
-COMPILER INVOKED BY: C:\SiliconLabs\SimplicityStudio\v5\developer\toolchains\keil_8051\9.60\BIN\C51.exe C:\Users\hallgat
-                    -o\SimplicityStudio\v5_workspace\03\src\InitDevice.c OMF2 SMALL DEBUG OBJECTEXTEND ROM(LARGE) WARNINGLEVEL(2) FLOATFUZZY(
-                    -3) OPTIMIZE(8,SPEED) DEFINE(DEBUG=1) INTVECTOR(0X0000) INTPROMOTE INCDIR(C:\Users\hallgato\SimplicityStudio\v5_workspace
-                    -\03\inc;C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/8051/v4.2.1//Device/shared/si8051Base;C:/SiliconLabs/Simplicit
-                    -yStudio/v5/developer/sdks/8051/v4.2.1//Device/EFM8BB1/inc) PRINT(.\src\InitDevice.lst) COND PAGEWIDTH(120) PAGELENGTH(65
-                    -) OBJECT(.\src\InitDevice.OBJ)
+OBJECT MODULE PLACED IN .\src/InitDevice.OBJ
+COMPILER INVOKED BY: Z:\opt\simplicitystudio5\developer\toolchains\keil_8051\9.60\BIN\C51.exe /home/minef/git_clones/MCU
+                    --lab/10-PWM/03/src/InitDevice.c OMF2 SMALL DEBUG OBJECTEXTEND ROM(LARGE) WARNINGLEVEL(2) FLOATFUZZY(3) OPTIMIZE(8,SPEED)
+                    - DEFINE(DEBUG=1) INTVECTOR(0X0000) INTPROMOTE INCDIR(/home/minef/git_clones/MCU-lab/10-PWM/03/inc;/opt/simplicitystudio5
+                    -/developer/sdks/8051/v4.2.2//Device/shared/si8051Base;/opt/simplicitystudio5/developer/sdks/8051/v4.2.2//Device/EFM8BB1/
+                    -inc) PRINT(.\src/InitDevice.lst) COND PAGEWIDTH(120) PAGELENGTH(65) OBJECT(.\src/InitDevice.OBJ)
 
 line level    source
 
@@ -63,9 +62,9 @@ line level    source
   49   1        // $[WDTCN - Watchdog Timer Control]
   50   1        // Deprecated
   51   1        // [WDTCN - Watchdog Timer Control]$
-C51 COMPILER V9.60.0.0   INITDEVICE                                                        11/16/2021 15:35:54 PAGE 2   
-
   52   1      
+C51 COMPILER V9.60.0.0   INITDEVICE                                                        11/23/2021 14:40:10 PAGE 2   
+
   53   1        // $[WDTCN_2 - Watchdog Timer Control]
   54   1      
   55   1        // Feed WDT timer before disabling (Erratum WDT_E102)
@@ -128,9 +127,9 @@ line level    source
  112          PORTS_1_enter_DefaultMode_from_RESET (void)
  113          {
  114   1        // $[P1 - Port 1 Pin Latch]
-C51 COMPILER V9.60.0.0   INITDEVICE                                                        11/16/2021 15:35:54 PAGE 3   
-
  115   1        // [P1 - Port 1 Pin Latch]$
+C51 COMPILER V9.60.0.0   INITDEVICE                                                        11/23/2021 14:40:10 PAGE 3   
+
  116   1      
  117   1        // $[P1MDOUT - Port 1 Output Mode]
  118   1        // [P1MDOUT - Port 1 Output Mode]$
@@ -193,9 +192,9 @@ line level    source
  175   1        // [XBR0 - Port I/O Crossbar 0]$
  176   1      
  177   1        // $[XBR1 - Port I/O Crossbar 1]
-C51 COMPILER V9.60.0.0   INITDEVICE                                                        11/16/2021 15:35:54 PAGE 4   
-
  178   1        /***********************************************************************
+C51 COMPILER V9.60.0.0   INITDEVICE                                                        11/23/2021 14:40:10 PAGE 4   
+
  179   1         - CEX0 routed to Port pin
  180   1         - ECI unavailable at Port pin
  181   1         - T0 unavailable at Port pin
@@ -258,9 +257,9 @@ line level    source
  238   1        // [TMR2H - Timer 2 High Byte]$
  239   1      
  240   1        // $[TMR2L - Timer 2 Low Byte]
-C51 COMPILER V9.60.0.0   INITDEVICE                                                        11/16/2021 15:35:54 PAGE 5   
-
  241   1        // [TMR2L - Timer 2 Low Byte]$
+C51 COMPILER V9.60.0.0   INITDEVICE                                                        11/23/2021 14:40:10 PAGE 5   
+
  242   1      
  243   1        // $[TMR2RLH - Timer 2 Reload High Byte]
  244   1        /***********************************************************************
@@ -323,9 +322,9 @@ line level    source
  301   1        // [TMOD - Timer 0/1 Mode]$
  302   1      
  303   1        // $[TCON - Timer 0/1 Control]
-C51 COMPILER V9.60.0.0   INITDEVICE                                                        11/16/2021 15:35:54 PAGE 6   
-
  304   1        /***********************************************************************
+C51 COMPILER V9.60.0.0   INITDEVICE                                                        11/23/2021 14:40:10 PAGE 6   
+
  305   1         - Start Timer 0 running
  306   1         ***********************************************************************/
  307   1        TCON |= TCON_TR0__RUN;
@@ -388,9 +387,9 @@ line level    source
  364   1         ***********************************************************************/
  365   1        PCA0CPM0 = PCA0CPM0_CAPN__DISABLED | PCA0CPM0_ECCF__DISABLED
  366   1            | PCA0CPM0_MAT__DISABLED | PCA0CPM0_PWM16__8_BIT | PCA0CPM0_CAPP__DISABLED
-C51 COMPILER V9.60.0.0   INITDEVICE                                                        11/16/2021 15:35:54 PAGE 7   
-
  367   1            | PCA0CPM0_ECOM__ENABLED | PCA0CPM0_PWM__ENABLED | PCA0CPM0_TOG__DISABLED;
+C51 COMPILER V9.60.0.0   INITDEVICE                                                        11/23/2021 14:40:10 PAGE 7   
+
  368   1        // [PCA0CPM0 - PCA Channel 0 Capture/Compare Mode]$
  369   1      
  370   1        // $[PCA0CPL0 - PCA Channel 0 Capture Module Low Byte]
@@ -453,9 +452,9 @@ line level    source
  427   1        // $[IP - Interrupt Priority]
  428   1        // [IP - Interrupt Priority]$
  429   1      
-C51 COMPILER V9.60.0.0   INITDEVICE                                                        11/16/2021 15:35:54 PAGE 8   
-
  430   1      }
+C51 COMPILER V9.60.0.0   INITDEVICE                                                        11/23/2021 14:40:10 PAGE 8   
+
  431          
  432          extern void
  433          ADC_0_enter_DefaultMode_from_RESET (void)
@@ -513,32 +512,33 @@ line level    source
  485   1      
  486   1        // $[ADC0CN0 - ADC0 Control 0]
  487   1        /***********************************************************************
- 488   1         - ADC0 conversion initiated on overflow of Timer 2
- 489   1         ***********************************************************************/
- 490   1        ADC0CN0 &= ~ADC0CN0_ADCM__FMASK;
- 491   1        ADC0CN0 |= ADC0CN0_ADCM__TIMER2;
- 492   1        // [ADC0CN0 - ADC0 Control 0]$
-C51 COMPILER V9.60.0.0   INITDEVICE                                                        11/16/2021 15:35:54 PAGE 9   
+ 488   1         - Enable ADC0 
+ 489   1         - ADC0 conversion initiated on overflow of Timer 2
+ 490   1         ***********************************************************************/
+ 491   1        ADC0CN0 &= ~ADC0CN0_ADCM__FMASK;
+ 492   1        ADC0CN0 |= ADC0CN0_ADEN__ENABLED | ADC0CN0_ADCM__TIMER2;
+ 493   1        // [ADC0CN0 - ADC0 Control 0]$
+C51 COMPILER V9.60.0.0   INITDEVICE                                                        11/23/2021 14:40:10 PAGE 9   
 
- 493   1      
- 494   1      }
- 495          
- 496          extern void
- 497          VREF_0_enter_DefaultMode_from_RESET (void)
- 498          {
- 499   1        // $[REF0CN - Voltage Reference Control]
- 500   1        /***********************************************************************
- 501   1         - Disable the Temperature Sensor
- 502   1         - The ADC0 ground reference is the GND pin
- 503   1         - The internal reference operates at 1.65 V nominal
- 504   1         - The ADC0 voltage reference is the VDD pin
- 505   1         ***********************************************************************/
- 506   1        REF0CN = REF0CN_TEMPE__TEMP_DISABLED | REF0CN_GNDSL__GND_PIN
- 507   1            | REF0CN_IREFLVL__1P65 | REF0CN_REFSL__VDD_PIN;
- 508   1        // [REF0CN - Voltage Reference Control]$
- 509   1      
- 510   1      }
- 511          
+ 494   1      
+ 495   1      }
+ 496          
+ 497          extern void
+ 498          VREF_0_enter_DefaultMode_from_RESET (void)
+ 499          {
+ 500   1        // $[REF0CN - Voltage Reference Control]
+ 501   1        /***********************************************************************
+ 502   1         - Disable the Temperature Sensor
+ 503   1         - The ADC0 ground reference is the GND pin
+ 504   1         - The internal reference operates at 1.65 V nominal
+ 505   1         - The ADC0 voltage reference is the VDD pin
+ 506   1         ***********************************************************************/
+ 507   1        REF0CN = REF0CN_TEMPE__TEMP_DISABLED | REF0CN_GNDSL__GND_PIN
+ 508   1            | REF0CN_IREFLVL__1P65 | REF0CN_REFSL__VDD_PIN;
+ 509   1        // [REF0CN - Voltage Reference Control]$
+ 510   1      
+ 511   1      }
+ 512          
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE

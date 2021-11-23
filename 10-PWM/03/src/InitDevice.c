@@ -485,10 +485,11 @@ ADC_0_enter_DefaultMode_from_RESET (void)
 
   // $[ADC0CN0 - ADC0 Control 0]
   /***********************************************************************
+   - Enable ADC0 
    - ADC0 conversion initiated on overflow of Timer 2
    ***********************************************************************/
   ADC0CN0 &= ~ADC0CN0_ADCM__FMASK;
-  ADC0CN0 |= ADC0CN0_ADCM__TIMER2;
+  ADC0CN0 |= ADC0CN0_ADEN__ENABLED | ADC0CN0_ADCM__TIMER2;
   // [ADC0CN0 - ADC0 Control 0]$
 
 }

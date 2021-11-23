@@ -28,14 +28,14 @@ all: 03.omf
 03.omf: echo_path $(OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Keil 8051 Linker'
-	LX51 "@03.lnp" || $(RC)
+	wine "/opt/simplicitystudio5/developer/toolchains/keil_8051/9.60/BIN/LX51" "@03.lnp" || $(RC)
 	@echo 'Finished building target: $@'
 
 # Change from all upper case to the expected case
 	@-mv "03.OMF.CRBUILD" "$@"
 
 # Generate hex file: 03.hex
-	@Ohx51 "03.omf" "HEXFILE (03.hex)" "H386" 2>&1 >/dev/null
+	@wine "/opt/simplicitystudio5/developer/toolchains/keil_8051/9.60/BIN/Ohx51" "03.omf" "HEXFILE (03.hex)" "H386" 2>&1 >/dev/null
 
 # Other Targets
 clean:
